@@ -1,0 +1,62 @@
+Build a complete SaaS web platform called "ThinkLab" that allows users to create, manage, and collaborate on AI-powered projects.  
+The platform should be production-ready, exportable as a full package (frontend + backend + database) so I can download and host it on my cPanel.  
+It must include:
+
+1. **Core Features:**
+   - AI-powered tools & templates for content creation, image generation, text summarization, code generation, SEO optimization, data analysis, and more.
+   - AI project marketplace where users can browse, purchase, or share templates and tools.
+   - Project management dashboard with Kanban board, task lists, file storage, and progress tracking.
+   - Real-time collaboration for team members in the "Team" package or higher.
+   - Integrated API key management so I can plug in my own AI APIs later.
+
+2. **Security & Authentication:**
+   - Email verification on sign-up.
+   - Phone number verification via OTP.
+   - Optional 2FA using authenticator apps or SMS.
+   - Role-based access control (Admin, Manager, User).
+   - GDPR-compliant user data handling.
+
+3. **Subscription & Payments:**
+   - Plans:
+       - Free Trial: 10 credits (no credit card required).
+       - Starter: $5/month.
+       - Pro: $15/month.
+       - Team: $25/month per user (multi-user collaboration tools enabled).
+       - Enterprise: "Contact Sales".
+   - Monthly and yearly billing options.
+   - Stripe and PayPal integration for payments.
+   - Automatic credit renewal for subscription plans.
+   - Admin panel to manage plans, users, and credits.
+
+4. **Technical Requirements:**
+   - Frontend: React.js (Next.js preferred), responsive design with Tailwind CSS.
+   - Backend: Node.js with Express.
+   - Database: PostgreSQL or MySQL.
+   - API integration structure ready for OpenAI, Stability AI, or other AI APIs.
+   - Cloud file storage setup (AWS S3 or similar).
+   - Email sending via SMTP or SendGrid.
+   - SMS verification using Twilio or similar.
+   - Secure environment variables management.
+   - Deployment-ready with `.zip` export option for cPanel hosting.
+
+5. **Admin Features:**
+   - Dashboard with analytics (active users, revenue, credits usage).
+   - User management (suspend, delete, reset password).
+   - Payment logs & subscription history.
+   - Template & marketplace management.
+
+6. **Other Functional Requirements:**
+   - Credit-based AI tool usage for Free Trial users.
+   - Dark mode toggle.
+   - Notifications via email & in-app alerts.
+   - Search & filter for projects and marketplace items.
+   - Multi-language support (English default, easy to add others).
+   - API documentation page for developers.
+
+Deliver the complete code in a single downloadable package with:
+- Installation instructions (`README.md`).
+- All required dependencies and `.env.example` file.
+- Database migration scripts.
+- Ready-to-run build for deployment on my hosting.
+
+The final project should be well-structured, secure, optimized for performance, and easy for me to maintain and scale in the future.
