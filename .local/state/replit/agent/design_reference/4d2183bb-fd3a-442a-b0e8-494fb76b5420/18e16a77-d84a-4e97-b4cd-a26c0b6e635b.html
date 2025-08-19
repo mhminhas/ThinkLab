@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThinkLab - AI-Powered Project Management Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary': '#3B82F6',
+                        'secondary': '#8B5CF6',
+                        'accent': '#10B981',
+                    }
+                }
+            },
+            darkMode: 'class'
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="font-inter bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- @COMPONENT: AppLayout [main application wrapper] -->
+    <div id="app" class="min-h-screen">
+        
+        <!-- Landing Header -->
+        <!-- @COMPONENT: LandingHeader [navigation and hero section] -->
+        <header class="bg-white dark:bg-gray-800 shadow-sm">
+            <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <h1 class="text-2xl font-bold text-primary">ThinkLab</h1>
+                        </div>
+                        <div class="hidden md:block ml-10">
+                            <div class="flex items-baseline space-x-4">
+                                <a href="#features" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium">Features</a>
+                                <a href="#pricing" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium">Pricing</a>
+                                <a href="#marketplace" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium">Marketplace</a>
+                                <a href="#docs" class="text-gray-600 dark:text-gray-300 hover:text-primary px-3 py-2 text-sm font-medium">API Docs</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button id="darkModeToggle" class="text-gray-600 dark:text-gray-300 hover:text-primary">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:inline"></i>
+                        </button>
+                        <button class="text-gray-600 dark:text-gray-300 hover:text-primary font-medium">Sign In</button>
+                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 font-medium">Start Free Trial</button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <div class="text-center">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                        AI-Powered Project Management
+                        <span class="text-primary">Reimagined</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+                        Create, manage, and collaborate on projects with cutting-edge AI tools. From content generation to data analysis, ThinkLab empowers your team to achieve more.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-600 font-semibold text-lg">
+                            Start Free Trial
+                        </button>
+                        <button class="border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-8 py-3 rounded-lg hover:border-primary hover:text-primary font-semibold text-lg">
+                            Watch Demo
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-4">No credit card required • 10 free credits included</p>
+                </div>
+            </div>
+        </header>
+        <!-- @END_COMPONENT: LandingHeader -->
+
+        <!-- Features Section -->
+        <!-- @COMPONENT: FeaturesSection [showcase of AI tools and capabilities] -->
+        <section id="features" class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Powerful AI Tools at Your Fingertips
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Everything you need to supercharge your projects with artificial intelligence
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- @MAP: features.map(feature => ( -->
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-robot text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Content Generation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Create high-quality content, blog posts, and marketing copy with advanced AI assistance.</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-secondary text-white rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-image text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Image Generation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Generate stunning visuals and artwork for your projects using state-of-the-art AI models.</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-accent text-white rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-code text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Code Generation</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Accelerate development with AI-powered code generation and debugging assistance.</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-yellow-500 text-white rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-bar text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Data Analysis</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Extract insights from your data with intelligent analysis and visualization tools.</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-red-500 text-white rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-search text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">SEO Optimization</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Optimize your content for search engines with AI-powered SEO recommendations.</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="w-12 h-12 bg-indigo-500 text-white rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Team Collaboration</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Work together in real-time with advanced collaboration and project management tools.</p>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: FeaturesSection -->
+
+        <!-- Dashboard Preview -->
+        <!-- @COMPONENT: DashboardPreview [mockup of the main dashboard interface] -->
+        <section class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Intuitive Dashboard Experience
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Manage all your AI-powered projects from one centralized, user-friendly dashboard
+                    </p>
+                </div>
+
+                <!-- Dashboard Mockup -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+                    <!-- Dashboard Header -->
+                    <div class="bg-gray-900 p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-white font-bold text-lg">ThinkLab Dashboard</div>
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-gray-400 text-sm">dashboard.thinklab.ai</div>
+                    </div>
+
+                    <!-- Dashboard Content -->
+                    <div class="flex">
+                        <!-- Sidebar -->
+                        <div class="w-64 bg-gray-50 dark:bg-gray-700 p-6">
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-3 text-primary font-medium">
+                                    <i class="fas fa-home"></i>
+                                    <span>Dashboard</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Projects</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-robot"></i>
+                                    <span>AI Tools</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-store"></i>
+                                    <span>Marketplace</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-users"></i>
+                                    <span>Team</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-600 dark:text-gray-300">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="flex-1 p-6">
+                            <!-- Stats Cards -->
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Total Projects</p>
+                                            <p class="text-2xl font-bold text-gray-900 dark:text-white" data-bind="user.totalProjects">24</p>
+                                        </div>
+                                        <div class="w-10 h-10 bg-primary text-white rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-project-diagram"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Credits Used</p>
+                                            <p class="text-2xl font-bold text-gray-900 dark:text-white" data-bind="user.creditsUsed">486</p>
+                                        </div>
+                                        <div class="w-10 h-10 bg-secondary text-white rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-coins"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Team Members</p>
+                                            <p class="text-2xl font-bold text-gray-900 dark:text-white" data-bind="team.memberCount">8</p>
+                                        </div>
+                                        <div class="w-10 h-10 bg-accent text-white rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Success Rate</p>
+                                            <p class="text-2xl font-bold text-gray-900 dark:text-white" data-bind="analytics.successRate">94%</p>
+                                        </div>
+                                        <div class="w-10 h-10 bg-yellow-500 text-white rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Projects -->
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow">
+                                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Recent Projects</h3>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead class="bg-gray-50 dark:bg-gray-700">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Project</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Status</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Team</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Updated</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                            <!-- @MAP: recentProjects.map(project => ( -->
+                                            <tr data-mock="true">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center text-sm font-medium">
+                                                            WM
+                                                        </div>
+                                                        <div class="ml-3">
+                                                            <div class="text-sm font-medium text-gray-900 dark:text-white">Website Redesign</div>
+                                                            <div class="text-sm text-gray-500 dark:text-gray-400">Marketing Campaign</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800">In Progress</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex -space-x-2">
+                                                        <div class="w-6 h-6 bg-blue-500 rounded-full border-2 border-white"></div>
+                                                        <div class="w-6 h-6 bg-red-500 rounded-full border-2 border-white"></div>
+                                                        <div class="w-6 h-6 bg-yellow-500 rounded-full border-2 border-white"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">2 hours ago</td>
+                                            </tr>
+                                            <tr data-mock="true">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-secondary text-white rounded-lg flex items-center justify-center text-sm font-medium">
+                                                            CA
+                                                        </div>
+                                                        <div class="ml-3">
+                                                            <div class="text-sm font-medium text-gray-900 dark:text-white">Content Analysis</div>
+                                                            <div class="text-sm text-gray-500 dark:text-gray-400">AI Research</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <span class="px-2 py-1 text-xs font-semibold rounded-full bg-blue-100 text-blue-800">Review</span>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex -space-x-2">
+                                                        <div class="w-6 h-6 bg-green-500 rounded-full border-2 border-white"></div>
+                                                        <div class="w-6 h-6 bg-purple-500 rounded-full border-2 border-white"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">1 day ago</td>
+                                            </tr>
+                                            <!-- @END_MAP )) -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: DashboardPreview -->
+
+        <!-- Pricing Section -->
+        <!-- @COMPONENT: PricingSection [subscription plans and pricing] -->
+        <section id="pricing" class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Choose Your Plan
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Flexible pricing to fit teams of all sizes. Start free, scale as you grow.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Free Trial -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 border border-gray-200 dark:border-gray-600">
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Free Trial</h3>
+                            <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">$0</div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Perfect for trying out our platform</p>
+                            <button class="w-full bg-gray-200 dark:bg-gray-600 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 font-medium">
+                                Start Free Trial
+                            </button>
+                        </div>
+                        <ul class="mt-8 space-y-3">
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                10 AI credits included
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Access to basic AI tools
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                3 projects maximum
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-times text-red-500 mr-3"></i>
+                                No team collaboration
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Starter -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 border border-gray-200 dark:border-gray-600">
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Starter</h3>
+                            <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">$5<span class="text-lg text-gray-500">/month</span></div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Great for individual creators</p>
+                            <button class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-blue-600 font-medium">
+                                Get Started
+                            </button>
+                        </div>
+                        <ul class="mt-8 space-y-3">
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                100 AI credits/month
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                All AI tools access
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Unlimited projects
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Email support
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pro -->
+                    <div class="bg-primary text-white rounded-2xl p-8 border-2 border-primary relative">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-accent text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold mb-2">Pro</h3>
+                            <div class="text-3xl font-bold mb-4">$15<span class="text-lg opacity-75">/month</span></div>
+                            <p class="opacity-75 mb-6">Perfect for growing businesses</p>
+                            <button class="w-full bg-white text-primary py-2 px-4 rounded-lg hover:bg-gray-100 font-medium">
+                                Get Started
+                            </button>
+                        </div>
+                        <ul class="mt-8 space-y-3">
+                            <li class="flex items-center text-sm">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                500 AI credits/month
+                            </li>
+                            <li class="flex items-center text-sm">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                Priority AI processing
+                            </li>
+                            <li class="flex items-center text-sm">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                Advanced analytics
+                            </li>
+                            <li class="flex items-center text-sm">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                API access
+                            </li>
+                            <li class="flex items-center text-sm">
+                                <i class="fas fa-check text-green-400 mr-3"></i>
+                                Priority support
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Team -->
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-2xl p-8 border border-gray-200 dark:border-gray-600">
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Team</h3>
+                            <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">$25<span class="text-lg text-gray-500">/user/month</span></div>
+                            <p class="text-gray-600 dark:text-gray-300 mb-6">Built for collaborative teams</p>
+                            <button class="w-full bg-secondary text-white py-2 px-4 rounded-lg hover:bg-purple-600 font-medium">
+                                Get Started
+                            </button>
+                        </div>
+                        <ul class="mt-8 space-y-3">
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                1000 AI credits/user/month
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Real-time collaboration
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Team management tools
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Custom integrations
+                            </li>
+                            <li class="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                Dedicated support
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="text-center mt-12">
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Need something bigger?</p>
+                    <button class="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-3 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 font-semibold">
+                        Contact Sales for Enterprise
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: PricingSection -->
+
+        <!-- Marketplace Preview -->
+        <!-- @COMPONENT: MarketplacePreview [showcase of AI tools marketplace] -->
+        <section id="marketplace" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        AI Tools Marketplace
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Discover, share, and purchase AI-powered templates and tools created by our community
+                    </p>
+                </div>
+
+                <!-- Search and Filter Bar -->
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-8">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1">
+                            <div class="relative">
+                                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                                <input type="text" placeholder="Search templates and tools..." class="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <select class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                                <option>All Categories</option>
+                                <option>Content Creation</option>
+                                <option>Image Generation</option>
+                                <option>Code Generation</option>
+                                <option>Data Analysis</option>
+                            </select>
+                            <select class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white">
+                                <option>Most Popular</option>
+                                <option>Newest</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketplace Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- @MAP: marketplaceItems.map(item => ( -->
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-mock="true">
+                        <!-- Content creation tool for blog posts and articles -->
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="AI writing tool interface" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2 py-1 bg-primary text-white text-xs font-medium rounded">Content Creation</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">4.8</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Blog Post Generator</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Generate high-quality blog posts and articles with SEO optimization built-in.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">$12</span>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-mock="true">
+                        <!-- AI image generation tool for creating artwork -->
+                        <img src="https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Digital art creation workspace" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2 py-1 bg-secondary text-white text-xs font-medium rounded">Image Generation</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Art Style Generator</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Create stunning artwork in various styles with advanced AI image generation.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">$8</span>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-mock="true">
+                        <!-- Code analysis and generation tool for developers -->
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Code editor with syntax highlighting" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2 py-1 bg-accent text-white text-xs font-medium rounded">Code Generation</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">4.7</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Code Optimizer</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Optimize and refactor your code with AI-powered suggestions and improvements.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">$15</span>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-mock="true">
+                        <!-- Data visualization and analytics dashboard -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Data analytics dashboard with charts" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2 py-1 bg-yellow-500 text-white text-xs font-medium rounded">Data Analysis</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">4.6</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Data Insights Pro</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Extract actionable insights from your data with advanced analytics and visualization.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">$20</span>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-mock="true">
+                        <!-- SEO optimization tool for content marketing -->
+                        <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="SEO analytics and optimization interface" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2 py-1 bg-red-500 text-white text-xs font-medium rounded">SEO</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">4.8</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">SEO Master</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Comprehensive SEO analysis and optimization with AI-powered recommendations.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">$18</span>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow" data-mock="true">
+                        <!-- Team collaboration and project management tool -->
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Team collaboration workspace" class="w-full h-48 object-cover rounded-t-xl">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="px-2 py-1 bg-indigo-500 text-white text-xs font-medium rounded">Collaboration</span>
+                                <div class="flex items-center text-yellow-500">
+                                    <i class="fas fa-star"></i>
+                                    <span class="ml-1 text-sm text-gray-600 dark:text-gray-400">4.9</span>
+                                </div>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Team Sync Pro</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Advanced team collaboration tools with AI-powered project insights and management.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-xl font-bold text-gray-900 dark:text-white">$25</span>
+                                <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 text-sm font-medium">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- @END_MAP )) -->
+                </div>
+
+                <div class="text-center mt-12">
+                    <button class="bg-primary text-white px-8 py-3 rounded-lg hover:bg-blue-600 font-semibold">
+                        View All Templates
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: MarketplacePreview -->
+
+        <!-- Admin Panel Preview -->
+        <!-- @COMPONENT: AdminPanelPreview [admin dashboard mockup] -->
+        <section class="py-20 bg-white dark:bg-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Powerful Admin Dashboard
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Complete control over your platform with comprehensive analytics and management tools
+                    </p>
+                </div>
+
+                <!-- Admin Dashboard Mockup -->
+                <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
+                    <!-- Header -->
+                    <div class="bg-gray-800 p-4 flex items-center justify-between">
+                        <div class="text-white font-semibold">ThinkLab Admin Panel</div>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-300 text-sm" data-bind="currentUser.email">admin@thinklab.ai</span>
+                            <div class="w-8 h-8 bg-primary rounded-full"></div>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <!-- Admin Sidebar -->
+                        <div class="w-64 bg-gray-800 p-6">
+                            <nav class="space-y-2">
+                                <a href="#" class="flex items-center space-x-3 text-white bg-primary px-3 py-2 rounded-lg">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Analytics</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-gray-700">
+                                    <i class="fas fa-users"></i>
+                                    <span>Users</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-gray-700">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Payments</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-gray-700">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Projects</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-gray-700">
+                                    <i class="fas fa-store"></i>
+                                    <span>Marketplace</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 text-gray-300 hover:text-white px-3 py-2 rounded-lg hover:bg-gray-700">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </nav>
+                        </div>
+
+                        <!-- Admin Content -->
+                        <div class="flex-1 p-6 bg-gray-50 dark:bg-gray-900">
+                            <!-- Key Metrics -->
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Total Users</p>
+                                            <p class="text-3xl font-bold text-gray-900 dark:text-white" data-bind="analytics.totalUsers">12,847</p>
+                                            <p class="text-sm text-green-600">+12% this month</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-users text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Monthly Revenue</p>
+                                            <p class="text-3xl font-bold text-gray-900 dark:text-white" data-bind="analytics.monthlyRevenue">$84,239</p>
+                                            <p class="text-sm text-green-600">+18% this month</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-dollar-sign text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">Active Projects</p>
+                                            <p class="text-3xl font-bold text-gray-900 dark:text-white" data-bind="analytics.activeProjects">5,632</p>
+                                            <p class="text-sm text-green-600">+8% this month</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-project-diagram text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-600 dark:text-gray-400">API Calls</p>
+                                            <p class="text-3xl font-bold text-gray-900 dark:text-white" data-bind="analytics.apiCalls">2.4M</p>
+                                            <p class="text-sm text-green-600">+25% this month</p>
+                                        </div>
+                                        <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-lg flex items-center justify-center">
+                                            <i class="fas fa-code text-xl"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Charts and Tables -->
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                                <!-- Revenue Chart -->
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Revenue Overview</h3>
+                                    <div class="h-64 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                                        <p class="text-gray-500 dark:text-gray-400"><!-- @FUNCTIONALITY: Revenue chart implementation --></p>
+                                        <div class="text-center">
+                                            <i class="fas fa-chart-line text-4xl text-gray-400 mb-2"></i>
+                                            <p class="text-gray-500 dark:text-gray-400">Revenue Chart</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- User Growth -->
+                                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">User Growth</h3>
+                                    <div class="h-64 bg-gray-100 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                                        <div class="text-center">
+                                            <i class="fas fa-chart-area text-4xl text-gray-400 mb-2"></i>
+                                            <p class="text-gray-500 dark:text-gray-400">User Growth Chart</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow">
+                                <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Recent Activity</h3>
+                                </div>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full">
+                                        <thead class="bg-gray-50 dark:bg-gray-700">
+                                            <tr>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">User</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Action</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Credits</th>
+                                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Time</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+                                            <!-- @MAP: recentActivity.map(activity => ( -->
+                                            <tr data-mock="true">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                                                            JD
+                                                        </div>
+                                                        <div class="ml-3">
+                                                            <div class="text-sm font-medium text-gray-900 dark:text-white">John Doe</div>
+                                                            <div class="text-sm text-gray-500 dark:text-gray-400">john@example.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">Generated blog post</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">-5</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">2 minutes ago</td>
+                                            </tr>
+                                            <tr data-mock="true">
+                                                <td class="px-6 py-4 whitespace-nowrap">
+                                                    <div class="flex items-center">
+                                                        <div class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                                                            SM
+                                                        </div>
+                                                        <div class="ml-3">
+                                                            <div class="text-sm font-medium text-gray-900 dark:text-white">Sarah Miller</div>
+                                                            <div class="text-sm text-gray-500 dark:text-gray-400">sarah@example.com</div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">Upgraded to Pro plan</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-white">+500</td>
+                                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">5 minutes ago</td>
+                                            </tr>
+                                            <!-- @END_MAP )) -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: AdminPanelPreview -->
+
+        <!-- API Integration Section -->
+        <!-- @COMPONENT: APISection [developer API documentation preview] -->
+        <section id="docs" class="py-20 bg-gray-50 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        Developer-Friendly API
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                        Integrate ThinkLab's AI capabilities into your own applications with our comprehensive API
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- API Documentation -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Quick Start Guide</h3>
+                        
+                        <!-- API Key Management -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm mb-6">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">API Key Management</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Your API Key</label>
+                                    <div class="flex">
+                                        <input type="text" value="tk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" class="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white font-mono text-sm" readonly>
+                                        <button class="px-4 py-2 bg-primary text-white rounded-r-lg hover:bg-blue-600">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="flex space-x-4">
+                                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 text-sm">
+                                        Generate New Key
+                                    </button>
+                                    <button class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 text-sm">
+                                        View Usage
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- API Endpoints -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Available Endpoints</h4>
+                            <div class="space-y-4">
+                                <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">POST</span>
+                                        <code class="text-sm font-mono text-gray-900 dark:text-white">/api/v1/generate/text</code>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Generate text content using AI models</p>
+                                </div>
+                                <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">POST</span>
+                                        <code class="text-sm font-mono text-gray-900 dark:text-white">/api/v1/generate/image</code>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Create images from text descriptions</p>
+                                </div>
+                                <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded">GET</span>
+                                        <code class="text-sm font-mono text-gray-900 dark:text-white">/api/v1/projects</code>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Retrieve user projects and data</p>
+                                </div>
+                                <div class="border border-gray-200 dark:border-gray-600 rounded-lg p-4">
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded">POST</span>
+                                        <code class="text-sm font-mono text-gray-900 dark:text-white">/api/v1/analyze/data</code>
+                                    </div>
+                                    <p class="text-sm text-gray-600 dark:text-gray-300">Analyze datasets with AI insights</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Code Example -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Code Examples</h3>
+                        
+                        <!-- Language Tabs -->
+                        <div class="bg-gray-800 rounded-t-lg p-4">
+                            <div class="flex space-x-4">
+                                <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">JavaScript</button>
+                                <button class="px-3 py-1 text-gray-300 hover:text-white rounded text-sm">Python</button>
+                                <button class="px-3 py-1 text-gray-300 hover:text-white rounded text-sm">cURL</button>
+                            </div>
+                        </div>
+
+                        <!-- Code Block -->
+                        <div class="bg-gray-900 rounded-b-lg p-6 font-mono text-sm overflow-x-auto">
+                            <pre class="text-gray-300"><code>// Generate text content with ThinkLab API
+<span class="text-blue-400">const</span> response = <span class="text-blue-400">await</span> <span class="text-yellow-400">fetch</span>(<span class="text-green-400">'https://api.thinklab.ai/v1/generate/text'</span>, {
+  <span class="text-red-400">method</span>: <span class="text-green-400">'POST'</span>,
+  <span class="text-red-400">headers</span>: {
+    <span class="text-green-400">'Authorization'</span>: <span class="text-green-400">'Bearer YOUR_API_KEY'</span>,
+    <span class="text-green-400">'Content-Type'</span>: <span class="text-green-400">'application/json'</span>
+  },
+  <span class="text-red-400">body</span>: <span class="text-yellow-400">JSON</span>.<span class="text-yellow-400">stringify</span>({
+    <span class="text-red-400">prompt</span>: <span class="text-green-400">'Write a blog post about AI in healthcare'</span>,
+    <span class="text-red-400">max_tokens</span>: <span class="text-purple-400">1000</span>,
+    <span class="text-red-400">model</span>: <span class="text-green-400">'thinklab-gpt-4'</span>
+  })
+});
+
+<span class="text-blue-400">const</span> data = <span class="text-blue-400">await</span> response.<span class="text-yellow-400">json</span>();
+<span class="text-yellow-400">console</span>.<span class="text-yellow-400">log</span>(data.content);</code></pre>
+                        </div>
+
+                        <!-- Response Example -->
+                        <div class="mt-6 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Example Response</h4>
+                            <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 font-mono text-sm">
+                                <pre class="text-gray-900 dark:text-gray-300"><code>{
+  "id": "gen_abc123",
+  "object": "text_generation",
+  "created": 1677652288,
+  "model": "thinklab-gpt-4",
+  "content": "AI in Healthcare: Revolutionizing Patient Care...",
+  "usage": {
+    "credits_used": 5,
+    "tokens": 987
+  }
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <!-- SDK Links -->
+                        <div class="mt-6 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
+                            <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">SDKs & Libraries</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="#" class="flex items-center space-x-3 p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                    <i class="fab fa-js-square text-yellow-500 text-xl"></i>
+                                    <span class="text-gray-900 dark:text-white">JavaScript SDK</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                    <i class="fab fa-python text-blue-500 text-xl"></i>
+                                    <span class="text-gray-900 dark:text-white">Python SDK</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                    <i class="fab fa-php text-purple-500 text-xl"></i>
+                                    <span class="text-gray-900 dark:text-white">PHP SDK</span>
+                                </a>
+                                <a href="#" class="flex items-center space-x-3 p-3 border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700">
+                                    <i class="fas fa-book text-gray-600 text-xl"></i>
+                                    <span class="text-gray-900 dark:text-white">Full Documentation</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- @END_COMPONENT: APISection -->
+
+        <!-- Footer -->
+        <!-- @COMPONENT: Footer [site footer with links and information] -->
+        <footer class="bg-gray-900 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">ThinkLab</h3>
+                        <p class="text-gray-400 mb-4">AI-powered project management platform for modern teams.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Product</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-white">Features</a></li>
+                            <li><a href="#" class="hover:text-white">Pricing</a></li>
+                            <li><a href="#" class="hover:text-white">Marketplace</a></li>
+                            <li><a href="#" class="hover:text-white">API</a></li>
+                            <li><a href="#" class="hover:text-white">Integrations</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Company</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-white">About Us</a></li>
+                            <li><a href="#" class="hover:text-white">Careers</a></li>
+                            <li><a href="#" class="hover:text-white">Blog</a></li>
+                            <li><a href="#" class="hover:text-white">Press</a></li>
+                            <li><a href="#" class="hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-4">Support</h4>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="#" class="hover:text-white">Help Center</a></li>
+                            <li><a href="#" class="hover:text-white">Documentation</a></li>
+                            <li><a href="#" class="hover:text-white">Status</a></li>
+                            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400">&copy; 2024 ThinkLab. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Terms</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- @END_COMPONENT: Footer -->
+
+    </div>
+    <!-- @END_COMPONENT: AppLayout -->
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        (function() {
+            // Dark mode toggle functionality
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or default to 'light'
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            
+            if (currentTheme === 'dark') {
+                html.classList.add('dark');
+            }
+            
+            darkModeToggle.addEventListener('click', function() {
+                html.classList.toggle('dark');
+                
+                // Save theme preference
+                const theme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Mock form submissions and interactions
+            document.querySelectorAll('button').forEach(button => {
+                if (button.textContent.includes('Start Free Trial') || 
+                    button.textContent.includes('Get Started') ||
+                    button.textContent.includes('Add to Cart')) {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // TODO: Implement actual form submission logic
+                        console.log('Button clicked:', this.textContent);
+                        
+                        // Show a mock success message
+                        const originalText = this.textContent;
+                        this.textContent = 'Processing...';
+                        this.disabled = true;
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.disabled = false;
+                            // In a real app, this would redirect or show a modal
+                        }, 2000);
+                    });
+                }
+            });
+
+            // Mock API key copy functionality
+            document.querySelectorAll('button').forEach(button => {
+                if (button.innerHTML.includes('fa-copy')) {
+                    button.addEventListener('click', function() {
+                        const input = this.previousElementSibling;
+                        if (input && input.tagName === 'INPUT') {
+                            // TODO: Implement actual clipboard API
+                            console.log('Copying to clipboard:', input.value);
+                            
+                            // Visual feedback
+                            const originalIcon = this.innerHTML;
+                            this.innerHTML = '<i class="fas fa-check"></i>';
+                            
+                            setTimeout(() => {
+                                this.innerHTML = originalIcon;
+                            }, 2000);
+                        }
+                    });
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
